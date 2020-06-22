@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#" target="_blank" rel="noopener noreferrer">
-    <img width="200" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="logo">
+    <img width="100" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="logo">
   </a>
 </p>
 
@@ -17,6 +17,7 @@ _<p align="center">A simple solution designed for bbs client</p>_
 ## Preview
 
 ![preview_img](https://s1.ax1x.com/2020/06/22/NGKjYj.png)
+
 ![preview_img](https://s1.ax1x.com/2020/06/22/NGMSlq.png)
 
 ## Develop
@@ -29,7 +30,7 @@ _<p align="center">A simple solution designed for bbs client</p>_
 
     npm start
 
-Go to <http://localhost:8080>
+Go to <http://localhost:8000>
 
 ## License
 
