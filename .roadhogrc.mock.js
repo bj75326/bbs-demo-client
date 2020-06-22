@@ -22,7 +22,7 @@ const proxy = {
     },
     $body: {
       name: 'Bill Ji',
-      avatar: 'https://bj75326.github.io/ba-asset/avatar/avatar.jpg',
+      avatar: 'https://bj75326.github.io/ba-asset/avatar/avatar2.jpg',
       userid: '00000001',
       notifyCount: 12,
     },
