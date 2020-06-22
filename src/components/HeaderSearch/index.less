@@ -1,0 +1,52 @@
+@import '../../common/theme.less';
+
+.headerSearch {
+  .input {
+    background-color: transparent;
+    &:global(.ant-select-auto-complete.ant-select) {
+      :global(.ant-select-selection--single) {
+        height: 36px;
+        background-color: transparent;
+        :global(.ant-select-selection__rendered) {
+          line-height: 36px;
+          :global(.ant-select-search--inline) {
+            display: flex;  
+            :global(.ant-select-search__field__wrap) {
+              display: flex;
+              :global(.ant-input) {
+                border: 1px solid @borderDefaultColor;
+                border-radius: 18px;
+                height: 36px;
+                box-shadow: none;
+                color: @textNormalColor;
+                font-size: 12px;
+                &::-webkit-input-placeholder {
+                  color: @textLightColor;
+                }
+                &:-moz-placeholder {
+                  color: @textLightColor;
+                }
+                &::-moz-placeholder {
+                  color: @textLightColor;
+                }
+                &:-ms-input-placeholder {
+                  color: @textLightColor;
+                }
+                &:hover, 
+                &:focus {
+                  border-color: @themeDefaultColor;
+                }
+              }
+            }
+          }
+          
+          :global(.ant-input-affix-wrapper) {
+            :global(.ant-input-suffix) {
+              color: @textLightColor;  
+            }  
+          }
+        }
+      }
+    }
+  }
+}

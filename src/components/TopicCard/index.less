@@ -1,0 +1,246 @@
+@import '../../common/theme.less';
+
+.card {
+  margin: 0 10px 40px 0;
+  padding: 18px 20px;
+  border-radius: 10px;   
+  border: 1px solid @borderDefaultColor; 
+  position: relative;
+  color: @textNormalColor;
+  font-size: @textNormalSize;
+  transition: .3s;
+  box-shadow: 0 5px 20px 0px #eff3f5;
+  min-height: 150px;
+  cursor: pointer;
+}
+
+.loading {
+  cursor: default;
+}
+
+.tags {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: @textSmallSize;
+  font-weight: 500;
+  transform-origin: 100%;
+  transform: translate3d(0, -50%, 0) scale(0.85);
+  white-space: nowrap;
+
+  a, .boardTag {
+    height: 25px;
+    line-height: 23px;
+    padding: 0 8px;
+    border-radius: @borderRadius;
+  }
+
+  a {
+    display: inline-block;
+    margin-right: 8px;
+    color: @textDarkColor;
+    background: @backgroundLightColor;
+    border: 1px solid @backgroundLightColor;
+    font-weight: 300;
+    &:hover, &:active {
+      text-decoration: underline;
+    }
+  }
+  .boardTag {
+    display: inline-flex;
+    align-items: center;
+    color: @textNormalColor;
+    background: #fff;
+    border: 1px solid @borderDefaultColor;
+    .disc {
+      :global(.iconfont) {
+        font-size: @textSmallSize;
+      }
+      margin-right: 8px;
+    }
+  }
+}
+
+.content {
+  display: flex;  
+  justify-content: space-between;
+}
+
+.meta {
+  display: flex;
+  flex: 1 1 74%;
+  .header {
+    margin-right: 32px;
+    flex: 0;
+  }
+
+  .desc {
+    flex: 1;
+    h2 {
+      font-size: 18px;
+      color: @textDarkColor;
+      margin-bottom: 5px;
+    }
+    .update {
+      font-size: @textSmallSize;
+      font-weight: 300;
+      margin-bottom: 10px;
+      transform-origin: 0;
+      transform: scale(0.90);
+      &>span:nth-child(1) {
+        margin-right: 6px;
+      }
+      :global(.iconfont) {
+        font-size: @textSmallSize;
+        font-weight: 600;
+      }
+      .name {
+        font-weight: 600;
+      }
+    }
+  }
+  .section {
+    color: @textLightColor;
+    font-weight: 300;
+    font-size: 13px;
+  }
+}
+
+.actions {
+  flex: 0 0 26%;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.counts {
+  height: 32px;
+  line-height: 32px;
+  font-weight: 500;
+  font-size: @textSmallSize;
+  span:nth-child(1) {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    line-height: 18px;
+    :global(.iconfont) {
+      font-size: 18px;
+    }
+  }
+  span {
+    vertical-align: middle;
+  }
+}
+
+//skeleton
+.loadingContent {
+  display: table;
+  width: 100%;
+}
+.background {
+  background: -webkit-gradient(linear,left top,right top,color-stop(25%,#f2f2f2),color-stop(37%,#e6e6e6),color-stop(63%,#f2f2f2));
+  background: -webkit-linear-gradient(left,#f2f2f2 25%,#e6e6e6 37%,#f2f2f2 63%);
+  background: linear-gradient(90deg,#f2f2f2 25%,#e6e6e6 37%,#f2f2f2 63%);
+  :global{
+    -webkit-animation: ant-skeleton-loading 1.4s ease infinite;
+          animation: ant-skeleton-loading 1.4s ease infinite;  
+  }
+  background-size: 400% 100%;
+}
+
+
+
+.skeletonHeader {
+  display: table-cell;
+  padding-right: 32px;
+  vertical-align: top;
+  .skeletonAvatar {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    .background();
+  }
+}
+.skeletonDesc {
+  display: table-cell;
+  vertical-align: top;
+  width: 100%;
+  .skeletonTitle {
+    height: 18px;
+    width: 50%;
+    margin: 6px 0 0;
+    .background();  
+  }
+  .skeletonUpdate {
+    height: 12px;
+    width: 40%;
+    margin: 8px 0 0;
+    .background();   
+  }
+  .skeletonSection {
+    list-style: none;
+    margin: 16px 0 0 ;
+    padding: 0;
+    &>li {
+      height: 16px;
+      .background();
+    }
+    &>li+li {
+      margin-top: 8px;
+      width: 70%;
+    }
+  }
+}
+
+.loadingTags {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid @borderDefaultColor;
+  border-radius: @borderRadius;  
+  height: 25px;
+  width: 120px;
+  line-height: 23px;
+  padding: 0 8px;
+
+  span:nth-child(1) {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    .background();
+  }
+  span:nth-child(2) {
+    flex: 1;
+    height: 12px;
+    .background();
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .content {
+    display: block;
+    .meta, .actions {
+      width: 100%;
+    }
+  }
+  .actions {
+    flex-direction: row;
+    justify-content: flex-end; 
+    margin-top: 12px;
+    .counts {
+      margin-left: 12px;
+    }
+  }
+  .meta {
+    .header {
+      margin-right: 20px;
+    }
+  }
+
+  .skeletonHeader {
+    padding-right: 20px;
+  }
+}

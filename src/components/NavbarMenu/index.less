@@ -1,0 +1,179 @@
+@import '../../common/theme.less';
+
+:global {
+  .@{bd-prefix-menu} {
+    &.ant-menu {
+      .ant-menu-item:active,
+      .ant-menu-submenu-title:active {
+        background: @backgroundNormalColor;
+      }
+      .ant-menu-item > a, 
+      .ant-menu-submenu-title {
+        display: block;
+        font-weight: 300;
+        color: @textDefaultColor;
+      }
+      .ant-menu-item > a:hover {
+        color: @textDarkColor;
+      } 
+      .ant-menu-item:hover,
+      .ant-menu-item-active,
+      .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+      .ant-menu-submenu-active,
+      .ant-menu-submenu-title:hover {
+        color: @textDarkColor;
+      }
+      .ant-menu-item-selected, 
+      .ant-menu-submenu-selected {
+        color: @textDarkColor;
+      }  
+      .ant-menu-item-selected > a,
+      .ant-menu-item-selected > a:hover, 
+      .ant-menu-submenu-selected > .ant-menu-submenu-title {
+        color: @textDarkColor;
+      }
+
+      &:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background-color: @backgroundLightColor;
+      }
+      &.ant-menu-horizontal {
+        //box-sizing: border-box;
+        height: 86px;
+        line-height: 86px;
+        margin: 0 0 0 12px;
+        vertical-align: middle;
+        display: inline-block;
+        border-bottom: 0;
+        .ant-menu-item,
+        .ant-menu-submenu {
+          height: 86px;    
+        }
+        & > .ant-menu-item:hover,
+        & > .ant-menu-submenu:hover,
+        & > .ant-menu-item-active,
+        & > .ant-menu-submenu-active,
+        & > .ant-menu-item-open,
+        & > .ant-menu-submenu-open,
+        & > .ant-menu-item-selected,
+        & > .ant-menu-submenu-selected {
+          border-bottom: 2px solid @themeDefaultColor;
+          color: @textDarkColor;
+        }
+        /*
+        & > .ant-menu-item > a,
+        & > .ant-menu-submenu > a {
+          display: block;
+          color: @textDefaultColor;
+        }
+        */
+        & > .ant-menu-item > a:hover,
+        & > .ant-menu-submenu > a:hover {
+          color: @textDarkColor;
+        }
+      }
+      &.ant-menu-inline {
+        border-right: 0px;
+        .ant-menu-item {
+          &:after {
+            border-right: 3px solid @themeDefaultColor;
+          }
+        }
+        .ant-menu-item,
+        .ant-menu-submenu-title {
+          width: 100%;
+        }
+      }
+    }  
+  } 
+  .@{bd-prefix-submenu} {
+    &.ant-menu-submenu-popup {
+      border-radius: 6px;
+      .ant-menu-item > a {
+        display: block;
+        font-weight: 300;
+        color: @textDefaultColor;
+      }
+      .ant-menu-item > a:hover {
+        color: @textDarkColor;
+      }
+      .ant-menu-item-selected, 
+      .ant-menu-submenu-selected {
+        color: @textDarkColor;
+      }  
+      .ant-menu-item-selected > a,
+      .ant-menu-item-selected > a:hover, 
+      .ant-menu-submenu-selected > .ant-menu-submenu-title {
+        color: @textDarkColor;
+      }
+      &:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background-color: @backgroundLightColor;
+      } 
+    }
+    &.ant-menu-submenu > .ant-menu {
+      border-radius: 6px;
+    }
+  }   
+}
+//inline模式的menu要根据media query的width变动改变left padding，暂时是对一级二级目录做了调试
+@inline-indent: 24px;
+@left-padding-lg: 80px;
+@left-padding-md: 60px;
+@left-padding-sm: 16px;
+
+@media only screen and (max-width: @screen-lg-max) {
+  :global {
+    .@{bd-prefix-menu} {
+      &.ant-menu {
+        &.ant-menu-inline {
+          > .ant-menu-item,
+          > .ant-menu-submenu > .ant-menu-submenu-title {
+            padding-left: @left-padding-lg!important;
+            & + .ant-menu {
+              .ant-menu-item {
+                padding-left: @left-padding-lg + @inline-indent!important;
+              }
+            }
+          }  
+        }
+      }
+    }  
+  }
+}
+@media only screen and (max-width: @screen-md-max) {
+  :global {
+    .@{bd-prefix-menu} {
+      &.ant-menu {
+        &.ant-menu-inline {
+          > .ant-menu-item,
+          > .ant-menu-submenu > .ant-menu-submenu-title {
+            padding-left: @left-padding-md!important;
+            & + .ant-menu {
+              .ant-menu-item {
+                padding-left: @left-padding-md + @inline-indent!important;
+              }
+            }
+          }  
+        }
+      }
+    }  
+  }
+}
+@media only screen and (max-width: @screen-md) {
+  :global {
+    .@{bd-prefix-menu} {
+      &.ant-menu {
+        &.ant-menu-inline {
+          > .ant-menu-item,
+          > .ant-menu-submenu > .ant-menu-submenu-title {
+            padding-left: @left-padding-sm!important;
+            & + .ant-menu {
+              .ant-menu-item {
+                padding-left: @left-padding-sm + @inline-indent!important;
+              }
+            }
+          }  
+        }
+      }
+    }  
+  }
+}

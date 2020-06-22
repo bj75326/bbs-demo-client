@@ -1,0 +1,104 @@
+@import '../../common/theme.less';
+
+.toolbar {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 40px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 56px;
+  z-index: 120;
+  background-color: #fff;
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+
+  &>div {
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    :global {
+      -webkit-animation-name: top-toolbar;
+      animation-name: top-toolbar;  
+    }
+    -webkit-animation-duration: 180ms;
+    animation-duration: 180ms;
+    -webkit-animation-direction: normal;
+    animation-direction: normal;  
+  }
+}
+
+
+.separator {
+  display: inline-block;
+  vertical-align: top;
+  width: 1px;
+  position: relative;
+  height: 40px;
+  margin: 0 10px;
+}
+
+.separator:after {
+  height: 20px;
+  top: 10px;
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  border-left: 1px solid @borderDefaultColor;
+  -webkit-transform: scaleX(.5);
+  transform: scaleX(.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0px;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  color: #b6b9bb;
+  background: transparent;
+  &:hover {
+    background: @backgroundLightColor;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    color: #e7eaec;
+    cursor: default;
+    pointer-events: none;
+    &:hover {
+      background: transparent;
+    }  
+  }
+  &.active {
+    color: @themeDefaultColor;  
+  }
+}
+
+.buttonWrapper {
+  display: inline-block;
+}
+
+.tooltipOverlayer {
+  font-size: @textSmallSize;   
+  :global(.ant-tooltip-content) {
+    line-height: 1.2;  
+  } 
+  :global(.ant-tooltip-inner) {
+    min-height: 24px;
+  }
+}

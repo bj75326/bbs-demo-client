@@ -1,0 +1,157 @@
+@import '../../../common/theme.less';
+
+.TeXBlockWrapper {
+  cursor: pointer;
+}
+
+.inlineTeXWrapper {
+  cursor: pointer;    
+}
+
+.mathJaxModalWrapper {
+  z-index: 1031;
+
+  :global {
+    .ant-modal-content {
+      border-radius: 2px;
+      .ant-modal-close {
+        right: -56px;
+        .ant-modal-close-x {
+          color: #fff;
+          font-size: 18px;   
+        }  
+      } 
+    }
+    .ant-modal-header {
+      border-radius: 2px;
+      padding: 0;
+      border-bottom: 0;  
+      .ant-modal-title {
+        padding-top: 40px;
+        font-size: 24px;
+        font-weight: 500;
+        text-align: center;  
+      }
+    }
+    
+    .@{bd-prefix-btn} {
+      &.ant-btn {
+        width: 100%;
+      }
+    }
+  }  
+}
+
+.formulaInput {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  border: 1px solid @borderDefaultColor;
+  border-radius: 2px;
+  transition: background .2s,border .2s;
+}
+
+.mathToolbar {
+  display: block;
+  padding: 4px 12px;
+  border-bottom: 1px solid @borderDefaultColor;
+  background: @backgroundLightColor;
+  user-select: none;
+}
+
+.toolbarBtn {
+  border: 1px solid transparent;
+  padding: 2px 4px;
+  height: 28px;
+  background: transparent;
+  outline: none;
+  vertical-align: middle;
+  &:hover {
+    border-color: @borderDefaultColor;
+  }
+}
+
+.textarea {
+  padding: 6px 12px;
+  overflow: auto;
+  min-height: 100px;
+  border: none;
+  resize: none;
+  flex: 1 1;
+  outline: none;
+
+  &::placeholder {
+    color: @textDefaultColor;   
+  } 
+}
+
+.formulaPreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  background: #fff;
+  border: 2px dashed @borderSecondaryColor;
+  min-height: 106px;
+  overflow-x: auto;
+  border-radius: 3px;
+  margin-bottom: 30px;  
+}
+
+.previewText {
+  color: @textDefaultColor;
+}
+
+.blockSwitch {
+  margin: -20px 0 10px 0;
+  label {
+    display: inline-block;
+    font-size: @textSmallSize;
+    margin-right: 12px;
+  }
+}
+
+.palettesWrapper {
+  z-index: 1032;
+}
+
+.palettes {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 384px;
+} 
+
+.palettesButton {
+  margin: 4px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  color: #8590a6;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: @backgroundLightColor;
+    color: #76839b;
+  }
+}
+
+:global(.math) {
+  .palettesButton {
+    width: 30px;
+    height: 60px;  
+  }
+}
+
+:global {
+  .mjx-chtml {
+    outline: none;
+    color: #000;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../common/theme.less';
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding-top: 60px;
+  .sider {
+    flex: 0 0 240px;
+    //to fix carousel flex issue
+    min-width: 0;
+    min-height: 0;   
+  }
+  .content {
+    flex: 0 0 ~"calc(100% - 320px)";
+  }
+}
+
+@media only screen and (max-width: @screen-md-max) {
+  .container {
+    display: block;
+    .sider, 
+    .content {
+      width: 100%;
+    }
+  }
+}

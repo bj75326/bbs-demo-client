@@ -1,0 +1,59 @@
+@import '../../common/theme.less';
+
+.list {
+  max-height: 400px;
+  overflow: auto;
+  .item {
+    transition: all .3s;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 12px 16px;
+
+    .meta {
+      width: 100%;
+    }
+
+    .avatar {
+      background: #fff;
+      margin-top: 4px;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+    &:hover {
+      background: @backgroundLightColor;
+    }
+    
+    .title {
+      font-size: @textSmallSize;
+      font-weight: 300;
+      color: @textNormalColor;
+    }
+
+    .description {
+      font-size: @textSmallSize;  
+    }
+
+    .datetime {
+      font-size: 12px;
+      font-weight: 300;
+      color: @textDefaultColor;
+      margin-top: 4px;
+    }
+  }
+}
+
+.notFound {
+  text-align: center;
+  padding: 73px 0 88px 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: @textDefaultColor;
+  & > :global(.iconfont) {
+    font-size: 64px;
+  }
+  & > .emptyText {
+    margin-top: -4px;
+  }
+}

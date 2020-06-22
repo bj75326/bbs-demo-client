@@ -1,0 +1,41 @@
+@import '../common/theme.less';
+
+.container {
+  background-color: #fff;
+  position: relative;
+  margin: 0 auto;
+  .content {
+    max-width: 1056px;
+    padding: 0 16px;
+    margin: 0 auto;
+    min-height: calc(~"100vh - 48px");
+    .top {
+      padding-top: 96px;
+      margin: auto;
+      text-align: center;
+      .log {
+        margin: 0 auto;
+        padding-bottom: 24px;
+        img {
+          width: 56px;
+          height: 56px;
+        }
+      }
+      .title {
+        font-size: 24px;
+        line-height: 32px;
+        color: #2b465a;
+        font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        font-weight: 600;
+      }
+      .desc {
+        margin-top: 12px;
+        color: @textDefaultColor;
+        font-weight: 300;
+      }  
+    }
+  }
+  .footer {
+    height: 48px;
+  }
+}

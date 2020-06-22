@@ -1,0 +1,60 @@
+@import '../../common/theme.less';
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerBtn {
+  &:global(.@{bd-prefix-btn}.ant-btn) {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    color: @textNormalColor;
+    font-weight: 600;
+    width: 120px;
+    box-shadow: 0 5px 20px 0px #eff3f5;
+    &:hover, &:active, &:focus {
+      border-color: @borderDefaultColor;
+    }
+    :global(.iconfont) {
+      margin: 0;
+    }
+  }      
+}
+
+.menu {
+  width: 120px;
+  :global(.ant-dropdown-menu-item) {
+    display: flex;
+    justify-content: space-between;
+    :global(.iconfont) {
+      font-size: @textSmallSize;
+    }
+  }  
+}
+
+.listStyle {
+  height: 36px;
+  line-height: 36px;
+  padding: 0 6px;
+  color: @textNormalColor;
+  cursor: pointer;
+  :global(.iconfont) {
+    font-size: 18px;
+  }  
+}
+
+.tabs {
+  flex: 1 0;
+  :global {
+    .ant-tabs-bar {
+      margin: 0;
+    }
+    .ant-tabs-nav .ant-tabs-tab {
+      margin: 0;
+      padding: 12px;
+    }    
+  }
+}

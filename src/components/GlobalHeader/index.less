@@ -1,0 +1,119 @@
+@import '../../common/theme.less';
+
+:global {
+  .ant-layout {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+.header {
+  height: 88px;
+  padding: 0 110px;
+  background-color: #fff;
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  .logo {
+    height: 88px;
+    line-height: 88px;
+    position: relative;
+    overflow: hidden;
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      height: 44px;
+    }
+    h1 {
+      display: inline-block;
+      color: #2b465a;
+      vertical-align: middle;
+      font-size: 18px;
+      margin: 0 0 0 12px;
+      font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      font-weight: 600;
+    }
+  }
+  .right {
+    float: right;
+    height: 100%;
+    display: flex;
+    align-items: center;  
+    .search {
+      padding: 0;
+      margin: 0 12px;  
+    }
+    button {
+      width: 92px;
+      &:nth-of-type(1) {
+        margin-right: 8px;
+      }
+    }
+    .action {
+      cursor: pointer;
+      padding: 0 12px;
+      display: inlint-block;
+      height: 100%;
+      transition: all .3s;
+      > i {
+        font-size: 14px;
+        vertical-align: middle;
+        color: @textDarkColor;
+      }
+      &:hover,
+      &:active, 
+      &:global(.ant-popover-open){
+        background: @backgroundLightColor;
+      }
+    }
+    .account {
+      margin-left: 16px;
+      padding-right: 0;
+      .avatar {
+        margin: 20px 6px 20px 0px;
+        vertical-align: middle;  
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .header {
+    .right {
+      button {
+        width: 88px;
+        &:nth-of-type(1) {
+          width: 66px;
+        }  
+      }
+      .account {
+        margin-left: 0;
+        margin-right: -12px;
+        padding-right: 12px;
+        .avatar {
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-lg-max) {
+  .header {
+    padding: 0 80px;
+  }
+}
+
+@media only screen and (max-width: @screen-md-max) {
+  .header {
+    padding: 0 60px;
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .header {
+    padding: 0 16px;
+  }
+}
+
+

@@ -1,0 +1,26 @@
+@import '../../common/theme.less';
+
+.searchIcon {
+  display: inline-block;
+  transition: all .3s;
+  &:active {
+    background: @backgroundLightColor;
+  }
+  & > .icon {
+    font-size: 22px!important;
+    padding: 2px;
+  }
+}
+
+.wrap {
+  :global(.ant-modal) {
+    top: 0;
+    margin: 0px;
+    :global(.ant-modal-content) {
+      border-radius: 0px;
+      :global(.ant-modal-body) {
+        padding: 16px;
+      }
+    }
+  }
+}

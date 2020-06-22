@@ -1,0 +1,94 @@
+@import '../../common/theme.less';
+
+.wrapper {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+}
+
+.toolbar {
+
+}
+
+.sideButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  white-space: nowrap;
+  border: 0;
+  color: @textDefaultColor;
+  cursor: pointer;
+  z-index: 100;
+  &:hover {
+    background-color: @backgroundLightColor;
+  }
+  & > svg {
+    transition: transform 200ms;
+  }
+}
+
+.showBlockButtons > svg{
+  transform: rotate(45deg);
+}
+
+.popup {
+  position: absolute;
+  z-index: 10;
+  display: inline-block;
+}
+
+.popupButtons > div{
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  :global {
+    -webkit-animation-name: insert-buttons;
+    animation-name: insert-buttons;  
+  }
+  -webkit-animation-duration: 180ms;
+  animation-duration: 180ms;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  white-space: nowrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0px;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;  
+  color: #b6b9bb;
+  background: transparent;
+  &:hover {
+    background: @backgroundLightColor;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.buttonWrapper {
+  display: inline-block;  
+}
+
+.tooltipOverlayer {
+  font-size: @textSmallSize;   
+  :global(.ant-tooltip-content) {
+    line-height: 1.2;  
+  } 
+  :global(.ant-tooltip-inner) {
+    min-height: 24px;
+  }
+}

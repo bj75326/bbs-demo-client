@@ -1,0 +1,236 @@
+@import '../../../common/theme.less';
+
+.imageUploader {
+  margin: 0 auto;
+  text-align: center;      
+}
+
+.uploaderLayout {
+  display: inline-block;
+  position: relative;
+  max-width: 80%;
+  vertical-align: top;
+  &.imageLoadingUnfocused:hover {
+    cursor: default;
+    -webkit-box-shadow: 0 0 0 2px rgba(0,132,255,.3);
+    box-shadow: 0 0 0 2px rgba(0,132,255,.3);    
+  }
+}
+
+.imageLoadingFocused {
+  cursor: default;
+  -webkit-box-shadow: 0 0 0 2px @themeDefaultActiveColor;
+  box-shadow: 0 0 0 2px @themeDefaultActiveColor;  
+}
+
+.imageLoading {
+  display: block;
+  max-width: 100%;
+  opacity: .3;
+}
+
+.uploaderStatus {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.uploaderText {
+  font-size: 28px;
+  line-height: 40px;
+  color: #8590a6;  
+}
+
+.uploaderProgress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: @themeDefaultColor;  
+}
+
+.loadingBar {
+  position: relative;
+  height: 100%;
+  background-color: hsla(0, 0%, 100%, .3);
+  display: block;
+  -webkit-animation: LoadingBarForward 1s ease-in-out .8s infinite;
+  animation: LoadingBarForward 1s ease-in-out .8s infinite
+}
+
+/*
+.imageLayout {
+
+}
+
+.imageWrapper {
+  
+}
+*/
+
+.image {
+  display: block;
+  max-width: 80%;
+  margin: 0 auto;
+  &.imageUnfocused:hover {
+    cursor: default;
+    -webkit-box-shadow: 0 0 0 2px rgba(0,132,255,.3);
+    box-shadow: 0 0 0 2px rgba(0,132,255,.3);  
+  }
+  &.smallSize {
+    max-width: 40%;
+  }
+}
+
+.imageFocused {
+  cursor: default;
+  -webkit-box-shadow: 0 0 0 2px @themeDefaultActiveColor;
+  box-shadow: 0 0 0 2px @themeDefaultActiveColor;
+}
+
+.imageCaption {
+  margin-top: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  text-align: center;
+  color: #999;
+  &:global(.ant-popover-open){
+    opacity: 0;  
+  }    
+}
+
+.captionLayout {
+  width: 100%;
+  :global {
+    .ant-popover-arrow {
+      display: none;  
+    }
+    .ant-popover-inner {
+      background: none;
+      box-shadow: none;
+      padding: 0 10px;
+    }
+    .ant-popover-content {
+      padding: 0 110px;
+      margin: 0 auto;
+      max-width: 1095px;
+    }
+    .ant-popover-inner-content {
+      padding: 0;  
+      textarea {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        padding: 0;
+        border: none;
+        font-size: 13.5px;
+        line-height: 1.5;
+        text-align: center;
+        color: #8590a6;
+        background: none;
+        resize: none;
+
+        &::placeholder,
+        &::-webkit-input-placeholder,
+        &::-ms-input-placeholder,
+        &:-ms-input-placeholder {
+          color: #bfbfbf;   
+        }  
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  } 
+}
+
+.imageResizer {
+  :global(.ant-popover-inner-content) {
+    padding: 0;
+  }  
+}
+
+.resizerWrapper {
+  padding: 7px 8px;
+}
+
+.resizerButton {
+  display: inline-flex;
+  vertical-align: middle;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 8px;
+  font-size: 14px;
+  line-height: 32px;
+  color: @textLightColor;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  &:hover {
+    color: @textNormalColor;  
+  }
+  &:focus {
+    outline: none;
+  }
+  &.isActive {
+    color: @themeDefaultActiveColor;
+  } 
+}
+
+
+@-webkit-keyframes LoadingBarForward {
+  0% {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%)
+  }
+
+  40% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0)
+  }
+
+  60% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0)
+  }
+
+  to {
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%)
+  }
+}
+
+@keyframes LoadingBarForward {
+  0% {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%)
+  }
+
+  40% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0)
+  }
+
+  60% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0)
+  }
+
+  to {
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%)
+  }
+}
+

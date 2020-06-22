@@ -1,0 +1,94 @@
+@import '../../common/theme.less';
+
+.richText {
+  padding: 0 20px;  
+}
+
+.hidePlaceholder {
+  :global(.public-DraftEditorPlaceholder-root) {
+    display: none;  
+  }
+}
+
+:global {
+  .DraftEditor-root {
+    padding: 0;
+    font-size: 15px;
+    font-weight: normal;
+    min-height: 300px;  
+  }
+
+  .public-DraftEditorPlaceholder-root {
+    color: #999999;
+    position: absolute;
+    pointer-events: none;
+    line-height: 2;  
+  }
+
+  .richEditor-paragraph {
+    margin: 0 0 1.4em;
+    line-height: 2;  
+  }
+
+  .richEditor-blockquote {
+    margin: 1.4em 0;
+    padding-left: 1em;
+    color: @textDefaultColor;
+    border-left: 3px solid #d3d3d3;  
+    line-height: 2;
+  }
+
+  .richEditor-header {
+    font-size: 1.4em;
+    font-weight: 400;
+    margin-bottom: 1.4em;
+    color: #333333;
+  }
+
+  .DraftEditor-root pre.public-DraftStyleDefault-pre {
+    border-radius: 6px;
+    margin: 1.4em 0;
+    padding: .88889em;
+    font-size: .8em;
+    word-break: normal;
+    word-wrap: normal;
+    white-space: pre;
+    overflow: auto;
+    background: #f6f6f6;
+  }
+
+  .richEditor-codeblock {
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .DraftEditor-root .public-DraftStyleDefault-ol, 
+  .DraftEditor-root .public-DraftStyleDefault-ul {
+    margin: 1.4em 0;
+    padding: 0;
+    list-style-type: none;
+    counter-reset: ol0;
+  }
+
+  .richEditor-orderedlist {
+    line-height: 2;
+    list-style-type: none;
+    position: relative;
+    margin-left: 1.5em;
+    &:before {
+      content: counter(ol0) ". ";
+      counter-increment: ol0;
+      position: absolute;
+      width: 40px;
+      left: -44px;
+      text-align: right;
+    }
+  }
+
+  .richEditor-unorderedlist {
+    line-height: 2;
+    list-style-type: disc;
+    position: relative;
+    margin-left: 1.5em;
+  }
+}

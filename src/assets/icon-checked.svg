@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-checked 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-checked" fill-rule="nonzero">
+            <path d="M12,24 C5.383,24 0,18.617 0,12 C0,5.383 5.383,0 12,0 C18.617,0 24,5.383 24,12 C24,18.617 18.617,24 12,24 Z" id="Shape" fill="#3CACFE"></path>
+            <path d="M18.575,10.127 L11.465,17.237 C11.201,17.501 10.185,17.847 9.563,17.225 L5.423,13.085 C5.238459,12.900789 5.13475716,12.6507471 5.13475716,12.39 C5.13475716,12.1292529 5.238459,11.879211 5.423,11.695 L5.436,11.695 C5.82009377,11.3117803 6.44190623,11.3117803 6.826,11.695 L10.516,14.605 L17.154,8.717 C17.3389346,8.53191 17.5898531,8.42791445 17.8515,8.42791445 C18.1131469,8.42791445 18.3640654,8.53191 18.549,8.717 L18.572,8.733 C18.757522,8.91750165 18.8618334,9.16835278 18.8618334,9.43 C18.8618334,9.69164722 18.757522,9.94249835 18.572,10.127 L18.575,10.127 Z" id="Shape" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,51 @@
+@import "../../common/theme.less";
+
+.main {
+  margin: 36px auto 0;
+  padding-bottom: 56px;
+  max-width: 320px;
+}
+
+.success,
+.warning,
+.error {
+  transition: color .3s,
+}
+
+.success {
+  color: @successColor;
+}
+
+.warning {
+  color: @warningColor;
+}
+
+.error {
+  color: @errorColor;
+}
+
+.progress-pass > .progress{
+  :global {
+    .ant-progress-bg {
+      background-color: @warningColor;
+    }
+  }
+}
+
+.getCaptcha {
+  width: 100%;
+}
+
+.submit {
+  width: 100%;  
+}
+
+.other {
+  border-top: 1px solid @borderDefaultColor;
+  padding-top: 16px;
+  font-size: @textSmallSize;  
+  color: @themeDefaultColor;
+  .right {
+    text-align: right;
+  }  
+}

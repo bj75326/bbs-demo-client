@@ -1,0 +1,88 @@
+@import '../../common/theme.less';
+
+.toolbar {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 10px;
+  white-space: nowrap;
+  position: absolute;
+  display: flex;
+  background-color: #2b4559;
+  box-shadow: 0 1px 3px -1px rgba(0,0,0,0.8);
+  z-index: 120;
+  border-radius: 3px;
+  :global {
+    -webkit-animation: 120ms ease-out popup;
+    animation: 120ms ease-out popup;
+  }
+
+  &>div {
+    display: flex;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    margin-left: -4px;
+    width: 8px;
+    height: 8px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: #2b4559;
+    box-shadow: 0 0 2px #2b4559;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0;
+  height: 45px;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  color: #adc4ca;
+  background: transparent;
+  &:hover {
+    background: #0c2c44;  
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    color: #3d636d;  
+    cursor: default;
+    pointer-events: none;
+    &:hover {
+      background: transparent;  
+    }
+  }
+  &.active {
+    color: @themeDefaultColor;
+  }
+}
+
+.buttonWrapper {
+  display: inline-block;
+  z-index: 1;
+}
+
+.tooltipOverlayer {
+  font-size: @textSmallSize;   
+  :global(.ant-tooltip-content) {
+    line-height: 1.2;  
+  } 
+  :global(.ant-tooltip-inner) {
+    min-height: 24px;
+  }
+}

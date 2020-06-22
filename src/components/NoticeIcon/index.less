@@ -1,0 +1,69 @@
+@import '../../common/theme.less';
+
+.popover {
+  width: 300px;
+  :global(.ant-popover-inner) {
+    border-radius: @borderRadius;
+    :global(.ant-popover-inner-content) {
+      padding: 0;
+      color: @textDefaultColor;
+    }   
+  }
+}
+
+.noticeButton {
+  cursor: pointer;
+  display: inline-block;
+  transition: all .3s;
+  &:hover {
+    background: @backgroundLightColor;
+  }
+}
+
+.icon {
+  font-size: 26px;
+  color: @textDarkColor;
+  padding: 2px;
+}
+
+.tabs {
+  :global {
+    .ant-tabs-nav-scroll {
+      text-align: center;
+    }
+    .ant-tabs-bar {
+      margin-bottom: 4px;
+    }
+  }
+}
+
+:global {
+  .@{bd-prefix-tabs} {
+    &.ant-tabs {
+      color: @textDefaultColor;
+      .ant-tabs-ink-bar {
+        background-color: @themeDefaultColor;
+      }
+      .ant-tabs-nav {
+        .ant-tabs-tab {
+          font-weight: 300;
+          &:hover,
+          &:active,
+          &.ant-tabs-tab-active {
+            color: @textDarkColor;
+          }
+        }
+      }
+    }
+  }
+  .@{bd-prefix-badge} {
+    &.ant-badge {
+      .ant-badge-dot {
+        background: #e95f5f;
+        height: 8px;
+        width: 8px;
+        border-radius: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import '../../../common/theme.less';
+
+.dividerWrapper {
+  overflow: hidden;
+  &.unfocused:hover {
+    cursor: default;
+    -webkit-box-shadow: 0 0 0 2px rgba(0,132,255,.3);
+    box-shadow: 0 0 0 2px rgba(0,132,255,.3);  
+  }
+  &.isFocused {
+    cursor: default;
+    -webkit-box-shadow: 0 0 0 2px @themeDefaultActiveColor;
+    box-shadow: 0 0 0 2px @themeDefaultActiveColor;    
+  }
+}
+
+.divider {
+  margin: 4em auto;
+  width: 240px;
+  max-width: 100%;
+  border: none;
+  border-top: 1px solid #d3d3d3;
+}
